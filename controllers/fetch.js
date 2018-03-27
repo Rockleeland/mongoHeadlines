@@ -126,20 +126,22 @@ router.get("/note/:id", (req, res) => {
     const id = req.params.id;
 
     db.Headline.findById(id).populate("Notes").exec((err, data) => {
-        res.json(data.notes);
+        res.json(data.comments);
+        console.log(data.comments + "nothing");
     });
 });
 
 
 // exports.noteCreatePost = 
 router.post("/note/:id", (req, res) => {
-    const note = new db.Note(req.body);
-    note.save((err, doc) => {
+    const comment = new db.Note(req.body);
+    comment.save((err, doc) => {
         if (err) throw err;
         db.Headline.findByIdAndUpdate(req.params.id, {$set: {"Notes": doc._id}}, {new: true}, (err, data) => {
             if (err) throw err;
             else {
                 res.send(data);
+                console.log('WHAT IS THIS POSTING ' + data)
             }
         });
     });
@@ -151,10 +153,12 @@ router.post("/saved/:id", (req, res) => {
         if (data.saved) {
             db.Headline.findByIdAndUpdate(req.params.id, {$set: {saved: false}}, {new: true}, (err,data) => {
                 res.redirect("/");
+                console.log('post is saved to database');
             });
         } else {
             db.Headline.findByIdAndUpdate(req.params.id, {$set: {saved: true}}, {new: true}, (err, data) => {
                 res.redirect("/saved");
+                console.log('post is working');
             });
         }
     });

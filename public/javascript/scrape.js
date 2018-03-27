@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     function loadScrapedResultsIntoDB() {
         $.get("/scraped", () => {
-            console.log("got");
+            console.log("this is scraped");
         }).done(() => {
             window.location.reload();
         });

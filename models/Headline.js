@@ -26,10 +26,11 @@ const headlineSchema = mongoose.Schema({
 		default: false
 	},
 	createdAt: {
-		type: String
+		type: String,
+		default: Date.now 
 	},
 	// this is for a toggle like save, use array for multiple comments
-  notes: { 
+  comments: { 
     type: Schema.Types.ObjectId, 
     ref: 'Notes' 
   }

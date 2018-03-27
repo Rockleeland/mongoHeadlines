@@ -19,9 +19,9 @@
                             <a class="headlineLink" href="https://www.theonion.com/c/news-in-brief{{{link}}}">{{headline}}</a>
                         </div>
                         <div class="col-md-4 text-center" style="display: inherit;">
-                            {{#unless note}}
+                            {{#unless Notes}}
                             <button type="button" class="btn btn-default mx-1 mb-1 commentBtn" data-toggle="modal" data-target="#showComment" value="{{{_id}}}">Comment</button>
-                            {{/unless}} {{#if note}}
+                            {{/unless}} {{#if Notes}}
                             <button type="button" class="btn btn-default mx-1 mb-1 commentBtn" data-toggle="modal" data-target="#showComment" value="{{{_id}}}">Edit Comment</button>
                             {{/if}} {{#unless saved}}
                             <button class="btn btn-default mx-1 mb-1 save" data-saved="{{{saved}}}" value="{{{_id}}}">Save Article</button>

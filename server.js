@@ -40,7 +40,7 @@ app.use("/", route);
 
 //Mongoose connection
 mongoose.Promise = global.Promise;
-const configDB = require('./config/database');
+const configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 
 //Get the default connection

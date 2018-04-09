@@ -8,7 +8,9 @@
 
 Mongo Headlines is a web scraping website that gets articles from https://www.theonion.com/
 
-Click as many pokemon as possible without clicking the same one. See how many Pokemon you can catch!
+Connects to MongoDB database. 
+Pressing "Scrape the Onion" gets the current articles from the site. 
+You can save articles and comment on articles as well.
 
 
 ## Npm Packages

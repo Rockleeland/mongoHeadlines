@@ -51,7 +51,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 db.once("open", function() {
   console.log("Mongoose connection successful.");
-  app.listen(PORT, function() {
+  app.listen(process.env.PORT || PORT, function() {
   console.log("Listening on PORT: " + PORT);
 	});
 });
